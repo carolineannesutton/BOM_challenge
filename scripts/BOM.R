@@ -33,6 +33,9 @@ count(Bom_sumStation)
 
 
 
+
+
+
 # Question 2  Which month saw the lowest average daily temperature difference? (Sept 26)
   #change the data to numberic and filter out the "NA"
 
@@ -100,10 +103,10 @@ BOM_join %>%
   ungroup() %>% 
   # create a new variable based on station location ie longitude
   mutate("Station_location" = case_when(lon == min(lon) ~ "westmost", lon == max(lon) ~ "eastmost"))
+
+
  
- 
- 
-  
+ write.csv(BOM_join, "Results/BOMST.csv")  
 
   
   
